@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Stories — Legacy of India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header small">
+  <div class="topbar">
+    <div class="logo-wrap"><div class="logo-badge"><svg width="54" height="54" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#d9b233"/></svg></div><div class="brand"><div class="brand-title">Legacy<br/><span>of</span> India</div></div></div>
+    <nav class="main-nav">
+      <a class="nav-item" href="index.html">Home</a>
+      <a class="nav-item" href="states.html">States</a>
+      <a class="nav-item" href="history.html">History</a>
+      <a class="nav-item" href="food.html">Food</a>
+      <a class="nav-item active" href="stories.html">Stories</a>
+      <a class="nav-item" href="festivals.html">Festivals</a>
+    </nav>
+  </div>
+</header>
+
+<main class="page-main">
+  <section class="stories-hero">
+    <h1>Stories</h1>
+    <p class="lead">Share and read short cultural stories, personal memories and folklore.</p>
+    <a class="btn primary" href="#submit">Share Your Story</a>
+  </section>
+
+  <section class="story-list">
+    <article class="story">
+      <h3>The Lamps of Home</h3>
+      <p class="muted">A short personal memory about Diwali rituals and family gatherings.</p>
+      <p>Every Diwali my grandmother would light fourteen small lamps across the windowsill — one for each family member who'd moved away. The light would hold our stories until we returned...</p>
+    </article>
+
+    <article class="story">
+      <h3>Tales from the Banyan</h3>
+      <p class="muted">Village folklore and the banyan tree that remembers everything.</p>
+      <p>In many northern villages elders would sit under the ancient banyan, telling children how the branches sheltered traders and travellers for centuries...</p>
+    </article>
+  </section>
+
+  <section id="submit" class="story-form">
+    <h3>Share Your Story</h3>
+    <form id="shareStory">
+      <input name="name" placeholder="Your name" required>
+      <input name="title" placeholder="Story title" required>
+      <textarea name="story" rows="6" placeholder="Write your memory or story..." required></textarea>
+      <button class="btn primary" type="submit">Submit story</button>
+      <div id="storySuccess" class="muted" style="display:none;margin-top:10px;">Thanks — your story has been saved locally (demo).</div>
+    </form>
+  </section>
+</main>
+
+<footer class="site-footer small"><div class="footer-inner">Legacy of India · Stories</div></footer>
+<script src="script.js"></script>
+<script>
+  document.getElementById('shareStory').addEventListener('submit', function(e){
+    e.preventDefault();
+    // In this static demo, we'll store in localStorage and show a confirmation
+    const form = e.target;
+    const data = {name:form.name.value, title:form.title.value, story:form.story.value, time:Date.now()};
+    const stored = JSON.parse(localStorage.getItem('loi_stories')||'[]');
+    stored.unshift(data);
+    localStorage.setItem('loi_stories', JSON.stringify(stored));
+    form.reset();
+    document.getElementById('storySuccess').style.display='block';
+    setTimeout(()=>document.getElementById('storySuccess').style.display='none',3000);
+  });
+</script>
+</body>
+</html>

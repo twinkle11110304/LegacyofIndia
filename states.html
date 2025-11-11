@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>States — Legacy of India</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Nunito:wght@300;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Include the same header/nav -->
+  <header class="site-header small">
+    <div class="topbar">
+      <div class="logo-wrap">
+        <div class="logo-badge" aria-hidden="true">
+          <svg width="54" height="54" viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#d9b233"/></svg>
+        </div>
+        <div class="brand">
+          <div class="brand-title">Legacy<br/><span>of</span> India</div>
+        </div>
+      </div>
+      <nav class="main-nav">
+        <a class="nav-item" href="index.html">Home</a>
+        <a class="nav-item active" href="states.html">States</a>
+        <a class="nav-item" href="history.html">History</a>
+        <a class="nav-item" href="food.html">Food</a>
+        <a class="nav-item" href="stories.html">Stories</a>
+        <a class="nav-item" href="festivals.html">Festivals</a>
+        <a class="nav-item" href="quizzes.html">Quizzes</a>
+        <a class="nav-item" href="about.html">About</a>
+        <a class="nav-item" href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <section class="states-hero">
+      <h1>Explore States</h1>
+      <p class="lead">Discover each state's culture, cuisine, monuments and quick facts.</p>
+    </section>
+
+    <section class="states-grid">
+      <!-- We'll render 28 state cards -->
+      <!-- Sample list: original content kept concise and original -->
+      <script>
+        const states = [
+          { name: "Andhra Pradesh", capital:"Amaravati", highlight:"Tirupati Temple" },
+          { name: "Arunachal Pradesh", capital:"Itanagar", highlight:"Tawang Monastery" },
+          { name: "Assam", capital:"Dispur", highlight:"Kaziranga National Park" },
+          { name: "Bihar", capital:"Patna", highlight:"Nalanda & Bodh Gaya" },
+          { name: "Chhattisgarh", capital:"Raipur", highlight:"Chitrakote Falls" },
+          { name: "Goa", capital:"Panaji", highlight:"Beaches & Churches" },
+          { name: "Gujarat", capital:"Gandhinagar", highlight:"Rann of Kutch" },
+          { name: "Haryana", capital:"Chandigarh", highlight:"Ancient sites & crafts" },
+          { name: "Himachal Pradesh", capital:"Shimla", highlight:"Hill resorts" },
+          { name: "Jharkhand", capital:"Ranchi", highlight:"Tribal culture & waterfalls" },
+          { name: "Karnataka", capital:"Bengaluru", highlight:"Hampi & Mysore" },
+          { name: "Kerala", capital:"Thiruvananthapuram", highlight:"Backwaters & Ayurveda" },
+          { name: "Madhya Pradesh", capital:"Bhopal", highlight:"Khajuraho & wildlife" },
+          { name: "Maharashtra", capital:"Mumbai", highlight:"Gateway of India, cuisine" },
+          { name: "Manipur", capital:"Imphal", highlight:"Classical dance & festivals" },
+          { name: "Meghalaya", capital:"Shillong", highlight:"Living root bridges" },
+          { name: "Mizoram", capital:"Aizawl", highlight:"Highlands & festivals" },
+          { name: "Nagaland", capital:"Kohima", highlight:"Hornbill Festival" },
+          { name: "Odisha", capital:"Bhubaneswar", highlight:"Kalinga temples" },
+          { name: "Punjab", capital:"Chandigarh", highlight:"Golden Temple & cuisine" },
+          { name: "Rajasthan", capital:"Jaipur", highlight:"Palaces & desert" },
+          { name: "Sikkim", capital:"Gangtok", highlight:"Mountain monasteries" },
+          { name: "Tamil Nadu", capital:"Chennai", highlight:"Temples & classical arts" },
+          { name: "Telangana", capital:"Hyderabad", highlight:"Charminar & biryani" },
+          { name: "Tripura", capital:"Agartala", highlight:"Palaces & folk arts" },
+          { name: "Uttar Pradesh", capital:"Lucknow", highlight:"Taj Mahal & Awadhi cuisine" },
+          { name: "Uttarakhand", capital:"Dehradun", highlight:"Himalayan pilgrimage & treks" },
+          { name: "West Bengal", capital:"Kolkata", highlight:"Cultural festivals & sweets" }
+        ];
+      </script>
+
+      <div id="statesContainer" class="grid-cards"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer small">
+    <div class="footer-inner">
+      <div>Legacy of India · Explore & Learn</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // render states
+    const container = document.getElementById('statesContainer');
+    states.forEach(s => {
+      const card = document.createElement('article');
+      card.className = 'state-card';
+      card.innerHTML = `
+        <h3>${s.name}</h3>
+        <p><strong>Capital:</strong> ${s.capital}</p>
+        <p class="muted">${s.highlight}</p>
+        <div class="state-actions">
+          <a href="history.html?state=${encodeURIComponent(s.name)}" class="btn small">Read History</a>
+          <a href="food.html?state=${encodeURIComponent(s.name)}" class="btn small ghost">Local Food</a>
+        </div>
+      `;
+      container.appendChild(card);
+    });
+  </script>
+</body>
+</html>

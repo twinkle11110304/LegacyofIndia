@@ -1,0 +1,116 @@
+:root{
+  --brown:#4b2f2a;
+  --gold:#d9b233;
+  --light:#f6eade;
+  --muted:#8b6558;
+  --card-bg:#fdeed8;
+  --shadow: 0 18px 30px rgba(35,18,12,0.22);
+  --rounded:18px;
+  --accent:#b36b1a;
+}
+
+/* Reset */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: 'Nunito', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:var(--brown);
+  background: linear-gradient(180deg,#f7efe6 0%, #f2e6d9 40%);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header */
+.site-header{background:var(--brown); color:var(--light); padding:20px 40px 10px; box-shadow: inset 0 -4px 0 rgba(0,0,0,0.08); position:sticky; top:0; z-index:40}
+.site-header.small{padding:16px 28px}
+.topbar{display:flex;align-items:center;justify-content:space-between;max-width:1200px;margin:0 auto}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-badge{width:54px;height:54px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#e0b84a,#c4951c);box-shadow:0 6px 18px rgba(209,171,78,0.15)}
+.brand-title{font-family:'Merriweather', serif; font-weight:900; color:var(--gold); font-size:28px; line-height:0.9}
+.brand-title span{font-size:20px; display:block; margin-top:-6px}
+.brand-sub{font-size:13px; color:#f2e6d9; margin-top:6px; opacity:0.9}
+
+/* Nav */
+.main-nav{display:flex;gap:18px;align-items:center}
+.nav-item{color:#f3e6d2;text-decoration:none;font-weight:600;padding:6px 8px;border-radius:12px;opacity:0.9}
+.nav-item.active{background:var(--gold); color:var(--brown); box-shadow:0 4px 10px rgba(0,0,0,0.12)}
+.nav-item:hover{opacity:1}
+
+/* Banner */
+.banner{background:linear-gradient(90deg,var(--gold), #caa322); color:var(--brown); text-align:center; padding:10px; font-weight:600; position:relative}
+.close-banner{position:absolute;right:14px;top:6px;border:0;background:transparent;font-size:16px;padding:6px 8px;border-radius:50%}
+
+/* Hero */
+.hero-section{padding:48px 20px 12px; display:flex; justify-content:center}
+.hero-card{max-width:1100px;background:linear-gradient(180deg,#fff7eb,#fff0d8); border-radius:20px; padding:28px; display:flex; gap:20px; align-items:center; box-shadow: var(--shadow); border:4px solid rgba(217,178,51,0.12)}
+.mascot{flex:0 0 140px; display:flex; align-items:center; justify-content:center}
+.hero-content h1{font-family:'Merriweather', serif; font-size:30px; margin:0; color:var(--brown)}
+.lead{color:var(--muted); line-height:1.6; margin-top:14px; max-width:640px}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 16px;border-radius:12px;text-decoration:none;font-weight:700}
+.btn.primary{background:var(--gold);color:var(--brown);box-shadow:0 8px 18px rgba(0,0,0,0.12)}
+.btn.ghost{border:2px solid rgba(75,47,42,0.08); background:transparent;color:var(--brown)}
+.btn.small{padding:8px 10px;font-size:13px}
+
+/* Discover */
+.discover{padding:48px 22px}
+.discover h2{text-align:center;font-family:'Merriweather',serif;font-size:40px;margin:10px 0;color:var(--brown)}
+.cards-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;max-width:1100px;margin:18px auto}
+.card{background:linear-gradient(180deg,#fdf3e8,#f6e4d2);padding:26px;border-radius:16px;border:4px solid rgba(75,47,42,0.12);text-align:center;box-shadow:0 16px 28px rgba(0,0,0,0.12)}
+.card-icon{font-size:36px;margin-bottom:12px}
+
+/* Quote */
+.quote-block{padding:60px 22px;background:linear-gradient(180deg,#fff2e0,#f0d9b8)}
+.quote-inner{max-width:900px;margin:0 auto;text-align:center}
+.quote-inner h2{font-family:'Merriweather',serif;color:var(--gold);font-size:30px}
+.quote-box{margin-top:20px;background:#fdeed8;padding:24px;border-radius:14px;border:4px solid rgba(179,107,26,0.18);box-shadow:0 22px 40px rgba(35,18,12,0.22)}
+blockquote{font-family:'Merriweather',serif;font-size:20px;margin:0;color:#6b463e;font-weight:400}
+cite{display:block;margin-top:12px;color:var(--muted);font-weight:700}
+
+/* Page main styles */
+.page-main{max-width:1100px;margin:36px auto;padding:0 20px}
+.states-hero, .history-hero, .food-hero, .stories-hero, .festivals-hero, .quiz-hero{ text-align:center; margin-bottom:22px}
+.grid-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.state-card{background:#fff6ea;padding:18px;border-radius:12px;border:2px solid rgba(75,47,42,0.08)}
+.state-actions{margin-top:12px;display:flex;gap:8px}
+
+/* timeline */
+.timeline{display:grid;gap:18px;padding:10px}
+.timeline-item{background:#fff6ea;padding:18px;border-radius:12px;border-left:6px solid var(--gold)}
+
+/* food */
+.food-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.food-card{background:#fff7eb;padding:16px;border-radius:12px;border:2px solid rgba(75,47,42,0.06)}
+
+/* stories */
+.story-list{display:grid;gap:18px}
+.story{background:#fff7eb;padding:16px;border-radius:12px}
+.story-form input, .story-form textarea, .contact-form input, .contact-form textarea{width:100%;padding:12px;margin-bottom:10px;border-radius:10px;border:1px solid rgba(75,47,42,0.08);font-size:14px}
+
+/* festivals */
+.festivals-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.festival-card{background:#fff4e3;padding:18px;border-radius:12px;border:2px solid rgba(75,47,42,0.06)}
+
+/* quiz */
+.quiz-card{background:#fff6ea;padding:18px;border-radius:12px}
+
+/* footer */
+.site-footer{background:var(--brown);color:var(--light);padding:34px 20px;margin-top:40px}
+.site-footer.small{padding:18px}
+.footer-inner{max-width:1100px;margin:0 auto;text-align:center}
+.footer-links a{color:#f4e8df;text-decoration:none}
+
+/* responsive */
+@media (max-width:960px){
+  .cards-grid{grid-template-columns:repeat(2,1fr)}
+  .grid-cards{grid-template-columns:repeat(2,1fr)}
+  .main-nav{display:none}
+}
+@media (max-width:560px){
+  .cards-grid{grid-template-columns:repeat(1,1fr)}
+  .hero-card{flex-direction:column;align-items:center}
+  .mascot{order:1}
+}
+.muted{color:var(--muted)}
